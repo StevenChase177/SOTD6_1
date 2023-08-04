@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
-  <body>
+<html lang="en">
+  <body id="body">
     <!-- HTML Table for Testing Purposes -->
-    <table id = "myTable" style="border: 10px solid red; font-size: 20px; font-weight: bold">
+    <table id = "myTable" style="border: 10px solid red; font-size: 20px; font-weight: bold; font-family: Arial, Helvetica, sans-serif">
       <tr id = "row1" style = "color: blue" >
         <td id = "1.1" style = "border: 2px solid black">Row 1 Col 1</td>
         <td id = "1.2" style = "border: 2px solid black">Row 1 Col 2</td>
@@ -13,16 +13,15 @@
     <br><br>
     <button type="submit" onclick = "changeTextColor()">Change Text Color</button>
     <br><br>
-    <!--Add 2nd Button-->
+    <button type="submit" onclick = "changeBodyAlligment()">Change Button Alligment</button>
     <br><br>
-    <!--Add 3rd Button-->
+    <button type="submit" onclick = "changeBorderColor()">Change Border Color</button>
     <br><br>
-    <!--Add 4th Button-->
+    <button type="submit" onclick = "changeFontFamily()">Change Font Family</button>
 
     <script>
       // First JavaScript Function
       // Changes text color from blue to green and back again
-
      function changeTextColor(){
        var textcolor = document.getElementById("row1").style.color;
        if (textcolor== "green"){
@@ -31,6 +30,36 @@
          textcolor = "green";
        }
        document.getElementById("row1").style.color = textcolor;
+     }
+     // Changes text aligment for buttons form left to center and back again
+     function changeBodyAlligment() {
+        var bodyStyle = document.getElementById("body").style.textAlign
+        if(bodyStyle != 'center'){
+            bodyStyle = 'center'
+        }else{
+            bodyStyle = 'left'
+        }
+        document.getElementById("body").style.textAlign = bodyStyle
+     }
+     // Changes border color form red to blue and back again
+     function changeBorderColor() {
+        var newBorderColor = document.getElementById("myTable").style.borderColor
+        if( newBorderColor == 'red'){
+            newBorderColor = 'blue'
+        }else{
+            newBorderColor = 'red'
+        }
+        document.getElementById("myTable").style.borderColor = newBorderColor
+     }
+     // Changes font family and changes it back again
+     function changeFontFamily() {
+        var newFontFamily = document.getElementById("myTable").style.fontFamily
+        if(  newFontFamily == 'Arial, Helvetica, sans-serif'){
+            newFontFamily = 'Lucida'
+        }else{
+            newFontFamily = 'Arial, Helvetica, sans-serif'
+        }
+        document.getElementById("myTable").style.fontFamily = newFontFamily
      }
     </script>
   </body>
